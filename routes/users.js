@@ -4,14 +4,15 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../connection/databaseconnection');
-const mysql = require('mysql2');
+const mysql = require('mysql');
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password:process.env.DB_PASSWORD,
-  database: process.env.DB_DATABSE,
+  host: process.env.MYSQLHOST,
+  port: process.env.MYSQLPORT,
+  user: process.env.MYSQLUSER,
+  password: process.env.MYSQLPASSWORD,
+  database: process.env.MYSQLDATABASE,
   connectionLimit: 10, // Adjust this based on your needs
 });
 function authenticateToken(req, res, next) {
