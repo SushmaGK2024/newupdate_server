@@ -4,7 +4,7 @@ const router = express.Router();
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const db = require('../connection/databaseconnection');
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 // Create a MySQL connection pool
 const pool = mysql.createPool({

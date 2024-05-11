@@ -1,6 +1,6 @@
 // backend/db/connection.js
 
-const mysql = require('mysql');
+const mysql = require('mysql2');
 
 const db = mysql.createConnection({
   connectionLimit: 10,
