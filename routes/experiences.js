@@ -77,13 +77,13 @@ router.post('/add-experience', (req, res) => {
         const extractQuestionsPayload = {
           overallExperience: overallExperience
         };
-        axios.post('http://127.0.0.1:5000/extract-questions', extractQuestionsPayload)
+        axios.post('https://thanuja2510-bertmodel.hf.space/extract-questions', extractQuestionsPayload)
           .then(response => {
             const questions = response.data.questions;
             console.log("questions : ", questions);
             // Send each question for category prediction
             const predictions = questions.map(question => {
-              return axios.post('http://127.0.0.1:5000/predict-category', { question });
+              return axios.post('https://thanuja2510-bertmodel.hf.space/predict-category', { question });
             });
             // Wait for all predictions to complete
             Promise.all(predictions)
