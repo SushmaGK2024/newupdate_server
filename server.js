@@ -11,7 +11,7 @@ const port = 3001;
 // ...
 // Example in server.js
 app.use(cors({
-  origin: ['http://localhost:3000', 'https://frontendnew-yeal.onrender.com'],
+  origin: ['http://localhost:3000', 'https://frontendnew-yeal.onrender.com','https://placify-front.onrender.com'],
   credentials: true
 }));
 app.use(function(req, res, next) {
